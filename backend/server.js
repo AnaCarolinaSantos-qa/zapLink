@@ -3,7 +3,7 @@
 const Hapi = require('@hapi/hapi');
 const mongoose = require('mongoose');
 
-const mongoURL = "mongodb+srv://qaninja:qaninja@cluster0.81tr6.gcp.mongodb.net/zaplinkdb?retryWrites=true&w=majority"
+const mongoURL = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/zaplinkdb';
 
 mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
 
